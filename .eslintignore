@@ -58,3 +58,4 @@ __snapshots__/
 
 # Vue CLI 生成的文件
 /public/
+vue-shims.d.ts
