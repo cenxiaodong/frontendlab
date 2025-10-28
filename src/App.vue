@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
+
+let a = 100;
 </script>
 
 <template>
