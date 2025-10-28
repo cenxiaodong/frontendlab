@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
 
-let a = 100;
-let b = 100;
-
 const cs = 'test';
+
+console.log(cs);
 </script>
 
 <template>
