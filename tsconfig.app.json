@@ -1,15 +1,21 @@
 {
 	"extends": "@vue/tsconfig/tsconfig.dom.json",
 	"compilerOptions": {
+		"composite": true, // 必须开启（多项目引用要求）
+		"noEmit": false, // 必须关闭（允许生成 .d.ts）
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 		"types": ["vite/client"],
+		"emitDeclarationOnly": true, // 只生成类型文件，不生成 .js
+		"outDir": "./dist/app-types", // 类型文件统一输出到 dist 下，不污染 src
+		"declarationDir": "./dist/app-types", // 明确指定 .d.ts 输出目录
 		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true
+		"noUncheckedSideEffectImports": true,
+		"allowImportingTsExtensions": false
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

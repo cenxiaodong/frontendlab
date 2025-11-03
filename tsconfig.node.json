@@ -9,10 +9,13 @@
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
 		"verbatimModuleSyntax": true,
 		"moduleDetection": "force",
-		"noEmit": true,
+		"composite": true, // 必须开启
+		"noEmit": false, //必须关闭
+		"emitDeclarationOnly": true, // 只生成 .d.ts
+		"outDir": "./dist/node-types", // 类型文件输出到 dist
+		"declarationDir": "./dist/node-types",
 
 		/* Linting */
 		"strict": true,

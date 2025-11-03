@@ -28,7 +28,7 @@ const router = createRouter({
 });
 
 // 路由守卫类型定义
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
 	// 设置页面标题
 	if (to.meta.title) {
 		document.title = to.meta.title as string;

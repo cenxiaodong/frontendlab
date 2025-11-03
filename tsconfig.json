@@ -7,16 +7,18 @@
 		"module": "ESNext",
 		"moduleResolution": "bundler",
 		"isolatedModules": true,
-		"noEmit": true,
+		"noEmit": true, // 根配置关闭 emit（不生成任何文件）
 		"baseUrl": ".",
 		"paths": { "@/*": ["src/*"] },
 		"strict": true, // 开启严格模式
-		"include": [
-			"src/**/*.ts",
-			"src/**/*.d.ts",
-			"src/**/*.tsx",
-			"src/**/*.vue",
-			"src/vue-shims.d.ts" // 消除警告
-		]
-	}
+		"allowImportingTsExtensions": false
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"src/vue-shims.d.ts" // 消除警告
+	],
+	"exclude": ["node_modules", "dist"] // 排除打包目录
 }
