@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
-
+// import { start, done } from '@/utils/nprogress';
 // 定义路由类型
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -29,11 +29,10 @@ const router = createRouter({
 
 // 路由守卫类型定义
 router.beforeEach((to, _, next) => {
-	// 设置页面标题
+	// start();
 	if (to.meta.title) {
 		document.title = to.meta.title as string;
 	}
-
 	// 身份验证检查
 	if (to.meta.requiresAuth) {
 		const isAuthenticated = localStorage.getItem('token');
@@ -44,6 +43,10 @@ router.beforeEach((to, _, next) => {
 	}
 
 	next();
+});
+
+router.afterEach(() => {
+	// done();
 });
 
 export default router;

@@ -19,6 +19,7 @@
 		]
 	},
 	"dependencies": {
+		"nprogress": "^0.2.0",
 		"vue": "^3.5.22",
 		"vue-router": "^4.6.3"
 	},
@@ -27,6 +28,7 @@
 		"@commitlint/config-conventional": "^20.0.0",
 		"@eslint/js": "^9.38.0",
 		"@types/node": "^24.6.0",
+		"@types/nprogress": "^0.2.3",
 		"@vitejs/plugin-vue": "^6.0.1",
 		"@vue/tsconfig": "^0.8.1",
 		"eslint": "^9.38.0",
@@ -36,6 +38,7 @@
 		"jiti": "^2.6.1",
 		"lint-staged": "^16.2.6",
 		"prettier": "^3.6.2",
+		"sass": "^1.93.3",
 		"typescript": "~5.9.3",
 		"typescript-eslint": "^8.46.2",
 		"vite": "^7.1.7",
