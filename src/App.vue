@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { hello } from '@/utils/test';
+
+console.log(hello, 'hello');
+
 // import HelloWorld from './components/HelloWorld.vue';
 </script>
 

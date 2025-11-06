@@ -16,7 +16,7 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
 		"allowImportingTsExtensions": false,
-		"baseUrl": ".",
+		"baseUrl": ".", // 解决路径提示
 		"paths": {
 			"@/*": ["src/*"]
 		}

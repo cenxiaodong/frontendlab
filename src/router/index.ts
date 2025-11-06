@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
-// import { start, done } from '@/utils/nprogress';
+import { hello } from '@/utils/test';
+
+console.log(hello);
+
+import { start, done } from '@/utils/nprogress';
 // 定义路由类型
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -29,7 +33,7 @@ const router = createRouter({
 
 // 路由守卫类型定义
 router.beforeEach((to, _, next) => {
-	// start();
+	start();
 	if (to.meta.title) {
 		document.title = to.meta.title as string;
 	}
@@ -46,7 +50,7 @@ router.beforeEach((to, _, next) => {
 });
 
 router.afterEach(() => {
-	// done();
+	done();
 });
 
 export default router;
