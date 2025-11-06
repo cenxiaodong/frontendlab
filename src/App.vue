@@ -18,10 +18,24 @@ console.log(hello, 'hello');
 		</a>
 	</div>
 	<HelloWorld msg="Vite + Vue" /> -->
+	<div class="box">
+		<div class="wrap">你好</div>
+	</div>
+	<div style="height: 2000px"></div>
 	<router-view></router-view>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+// @use '@/assets/variables' as v;
+$primary-color: #3498db;
+$font-size: 16px;
+.box {
+	.wrap {
+		width: 200px;
+		height: 300px;
+		background: $error-color;
+	}
+}
 .logo {
 	height: 6em;
 	padding: 1.5em;

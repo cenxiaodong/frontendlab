@@ -1,0 +1,198 @@
+/* ===== 重置样式 ===== */
+
+/* 1. 盒模型统一 */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. 移除默认边距和填充 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* 3. 设置根元素字体 */
+html {
+	font-family: $font-family;
+	font-size: $font-size-base;
+	font-weight: 400;
+	line-height: $line-height-base;
+	color: #333;
+
+	// 字体平滑
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// 移动端优化
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* 4. 主体样式 */
+body {
+	// 确保 body 填满视口
+	min-height: 100vh;
+	// 滚动行为
+	scroll-behavior: smooth;
+	// 文本渲染优化
+	text-rendering: optimizeSpeed;
+}
+
+/* 5. 列表重置 */
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* 6. 链接重置 */
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+/* 7. 按钮和输入框重置 */
+button,
+input,
+select,
+textarea {
+	border: none;
+	background: none;
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+
+	// 移除 iOS 输入框默认样式
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+/* 移除输入框类型搜索的默认清除按钮 */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/* 8. 按钮特定样式 */
+button {
+	cursor: pointer;
+	padding: 0;
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+}
+
+/* 9. 图片和媒体元素 */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* 10. 表单元素 placeholder 颜色 */
+input::placeholder,
+textarea::placeholder {
+	color: $text-color-placeholder;
+	opacity: 1;
+}
+
+/* 11. 表格重置 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 12. 代码元素 */
+code,
+kbd,
+pre,
+samp {
+	// font-family: $font-family-mono;
+}
+
+/* 13. 隐藏属性 */
+[hidden] {
+	display: none !important;
+}
+
+/* 14. 移除详情标签的默认三角 */
+details > summary {
+	list-style: none;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+}
+
+/* 15. 滚动条样式（可选） */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #c1c1c1;
+	border-radius: 3px;
+
+	&:hover {
+		background: #a8a8a8;
+	}
+}
+
+/* 16. 选择文本样式 */
+::selection {
+	background-color: $primary-color;
+	color: white;
+}
+
+/* 17. 响应式图片 */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* 18. 禁用默认的触摸呼出菜单 */
+img,
+a {
+	-webkit-touch-callout: none;
+}
+
+/* 19. 移除数字输入框的上下箭头 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}

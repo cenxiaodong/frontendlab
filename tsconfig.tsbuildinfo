@@ -1,1 +1,1 @@
-{"root":["./src/main.ts","./src/vue-shims.d.ts","./src/router/index.ts","./src/app.vue","./src/components/helloworld.vue","./src/views/aboutpage.vue"],"version":"5.9.3"}
+{"root":["./src/global.d.ts","./src/main.ts","./src/vue-shims.d.ts","./src/router/index.ts","./src/utils/nprogress.ts","./src/utils/test.ts","./src/app.vue","./src/components/helloworld.vue","./src/views/aboutpage.vue"],"version":"5.9.3"}
