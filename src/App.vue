@@ -1,7 +1,22 @@
 <script setup lang="ts">
-import { hello } from '@/utils/test';
+import { storeToRefs } from 'pinia';
 
-console.log(hello, 'hello');
+import { useCounterStore } from '@/stores/counterStore';
+
+const store = useCounterStore();
+
+const { count, name } = storeToRefs(store);
+
+function add() {
+	store.$patch({
+		count: store.count + 1,
+		name: 'DIO',
+	});
+}
+
+function reset() {
+	// store.$reset();
+}
 
 // import HelloWorld from './components/HelloWorld.vue';
 </script>
@@ -19,7 +34,10 @@ console.log(hello, 'hello');
 	</div>
 	<HelloWorld msg="Vite + Vue" /> -->
 	<div class="box">
-		<div class="wrap">你好</div>
+		<button class="wrap" @click="add">添加</button>
+		<button class="wrap" @click="reset">重置</button>
+		<div>{{ count }}</div>
+		{{ name }}
 	</div>
 	<div style="height: 2000px"></div>
 	<router-view></router-view>
