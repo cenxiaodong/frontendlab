@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 import { start, done } from '@/utils/nprogress';
+
 // 定义路由类型
 const routes: Array<RouteRecordRaw> = [
 	{
