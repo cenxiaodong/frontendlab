@@ -1,1 +1,15 @@
 @forward 'variables.scss';
+
+.router-view-container {
+	flex: 1; // 自动占据剩余空间（配合flex布局实现固定页脚）
+	overflow-y: auto; // 内容超出时滚动，避免页面整体滚动
+	padding: 20px;
+}
+
+// 4. 响应式工具类（可选，方便页面使用）
+@mixin respond-to($breakpoint) {
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
+	@media (min-width: $breakpoint-value) {
+		@content;
+	}
+}

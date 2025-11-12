@@ -33,7 +33,7 @@ function reset() {
 		</a>
 	</div>
 	<HelloWorld msg="Vite + Vue" /> -->
-	<div class="box">
+	<div class="box router-view-container">
 		<button class="wrap" @click="add">添加</button>
 		<button class="wrap" @click="reset">重置</button>
 		<div>{{ count }}</div>

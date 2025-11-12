@@ -48,3 +48,25 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+// 响应式断点（适配移动端/PC）
+$breakpoints: (
+	sm: 576px,
+	// 小屏手机
+	md: 768px,
+	// 平板
+	lg: 992px,
+	// 小屏PC
+	xl: 1200px, // 大屏PC
+);
+
+// 布局尺寸
+$header-height: 60px; // 导航栏高度
+$footer-height: 50px; // 页脚高度
+$sidebar-width: 220px; // 侧边栏宽度（PC端）
+$sidebar-width-sm: 80px; // 侧边栏折叠宽度
+
+// 颜色变量（示例）
+$primary-color: #409eff;
+$bg-color: #f5f6f7;
+$text-color: #333;
