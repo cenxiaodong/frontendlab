@@ -20,26 +20,7 @@ function reset() {
 
 // import HelloWorld from './components/HelloWorld.vue';
 </script>
-
 <template>
-	<!-- // 改成 "build:pro": "vite build --mode production ", -->
-
-	<!-- <div>
-		<a href="https://vite.dev" target="_blank">
-			<img src="/vite.svg" class="logo" alt="Vite logo" />
-		</a>
-		<a href="https://vuejs.org/" target="_blank">
-			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-		</a>
-	</div>
-	<HelloWorld msg="Vite + Vue" /> -->
-	<div class="box router-view-container">
-		<button class="wrap" @click="add">添加</button>
-		<button class="wrap" @click="reset">重置</button>
-		<div>{{ count }}</div>
-		{{ name }}
-	</div>
-	<div style="height: 2000px"></div>
 	<router-view></router-view>
 </template>
 
