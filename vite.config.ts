@@ -1,9 +1,19 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
-
+import Components from 'unplugin-vue-components/vite';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 export default defineConfig({
-	plugins: [vue()],
+	plugins: [
+		vue(),
+		Components({
+			resolvers: [
+				AntDesignVueResolver({
+					importStyle: false, // css in js
+				}),
+			],
+		}),
+	],
 	server: {
 		host: '0.0.0.0', // 确保允许网络访问
 		port: 5555, // 明确指定端口

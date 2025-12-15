@@ -21,7 +21,9 @@ function reset() {
 // import HelloWorld from './components/HelloWorld.vue';
 </script>
 <template>
-	<router-view></router-view>
+	<router-view #="{ Component }">
+		<component :is="Component" />
+	</router-view>
 </template>
 
 <style lang="scss" scoped>

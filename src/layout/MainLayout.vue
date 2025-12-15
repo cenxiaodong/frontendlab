@@ -1,7 +1,64 @@
 <template>
-	<div class="main-layout">
-		<!-- <aside></aside> -->
-		<!--<!~~ 侧边栏 ~~>
+	<a-layout class="lab-main-layout">
+		<div class="layout-sider-placeholder"></div>
+		<a-layout-sider
+			v-model:collapsed="collapsed"
+			:trigger="null"
+			collapsible
+			width="210"
+			class="layout-sideBar-fixed"
+		>
+			<div class="logo" />
+			<a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+				<a-menu-item key="1">
+					<user-outlined />
+					<span>nav 1</span>
+				</a-menu-item>
+				<a-menu-item key="2">
+					<video-camera-outlined />
+					<span>nav 2</span>
+				</a-menu-item>
+				<a-menu-item key="3">
+					<upload-outlined />
+					<span>nav 3</span>
+				</a-menu-item>
+			</a-menu>
+		</a-layout-sider>
+		<a-layout class="lab-default-layout-main">
+			<div style="height: 80px; border: 1px solid red"></div>
+			<div class="layout-header-fixed">
+				<a-layout-header class="lab-layout-header">
+					<menu-unfold-outlined
+						v-if="collapsed"
+						class="trigger"
+						@click="() => (collapsed = !collapsed)"
+					/>
+					<menu-fold-outlined
+						v-else
+						class="trigger"
+						@click="() => (collapsed = !collapsed)"
+					/>
+				</a-layout-header>
+				<div class="lab-multiple-tabs vben-multiple-tabs--hide-close"></div>
+			</div>
+
+			<a-layout-content class="lab-content-layout">
+				<div>
+					<div style="height: 1000px">3333</div>
+					<div style="height: 2000px">3333</div>
+				</div>
+			</a-layout-content>
+		</a-layout>
+	</a-layout>
+	<!--<div class="main-layout">
+		<a-date-picker v-model:value="value1" />
+		<a-button type="primary">Primary Button</a-button>
+		<a-button>Default Button</a-button>
+		<a-button type="dashed">Dashed Button</a-button>
+		<a-button type="text">Text Button</a-button>
+		<a-button type="link">Link Button</a-button>
+		<!~~ <aside></aside> ~~>
+		<!~~<!~~ 侧边栏 ~~>
 		<aside class="sidebar" :class="{ collapsed: isCollapsed }">
 			<!~~ 侧边栏头部（实验室名称 + 折叠按钮） ~~>
 			<div class="sidebar-header">
@@ -69,11 +126,20 @@
 			<div class="content-main">
 				<router-view />
 			</div>
-		</main>-->
-	</div>
+		</main>~~>
+	</div>-->
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref, computed, watch } from 'vue';
+// import {
+// 	UserOutlined,
+// 	VideoCameraOutlined,
+// 	UploadOutlined,
+// 	MenuUnfoldOutlined,
+// 	MenuFoldOutlined,
+// } from '@ant-design/icons-vue';
+const selectedKeys = ref<string[]>(['1']);
+const collapsed = ref<boolean>(false);
 import { useRoute, useRouter } from 'vue-router';
 // 引入图标（根据你用的图标库调整，比如 Element Plus 图标）
 // import { ArrowLeft, ArrowRight, Menu, Home, Animation, Loading } from '@element-plus/icons-vue';
@@ -119,11 +185,61 @@ import { useRoute, useRouter } from 'vue-router';
 
 <style lang="scss" scoped>
 // 全局布局容器
-.main-layout {
+.lab-main-layout {
 	display: flex;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	background-color: #f4f7f9;
+	.layout-sider-placeholder {
+		width: 210px;
+		overflow: hidden;
+		flex: 0 0 210px;
+		max-width: 210px;
+		min-width: 210px;
+		transition: 0.2s;
+	}
+	.layout-sideBar-fixed {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+	.lab-default-layout-main {
+		.layout-header-fixed {
+			position: fixed;
+			z-index: 505;
+			top: 0;
+			width: 100%;
+		}
+		.lab-layout-header {
+			background: #fff;
+			width: calc(100% - 210px);
+			height: 48px;
+			line-height: 48px;
+		}
+		.lab-multiple-tabs {
+			transition:
+				margin 0.2s ease-in-out 0.6s,
+				opacity 0.2s ease-in-out 0.6s;
+			z-index: 10;
+			height: 32px;
+			border-bottom: 1px solid #eee;
+			background-color: #fff;
+			line-height: 32px;
+		}
+
+		.lab-content-layout {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			flex-grow: 1;
+			width: 100%;
+			height: 0;
+			min-height: 0;
+			overflow: auto;
+		}
+	}
 }
 
 // 侧边栏样式

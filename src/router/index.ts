@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
 		path: '/',
 		name: 'Home',
 		component: MainLayout,
-		redirect: '/dashboard' as RouteRecordRedirectOption,
+		redirect: '/animations' as RouteRecordRedirectOption,
 		meta: {
 			title: '根目录',
 			sort: 0,
